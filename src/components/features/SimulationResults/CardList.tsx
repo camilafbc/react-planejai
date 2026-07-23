@@ -40,7 +40,7 @@ export function CardList({ title, data, variant = 'default' }: CardListProps) {
       )}
     >
       <p className="mb-6 text-lg font-semibold tracking-widest">{title}</p>
-      {data.map(card => (
+      {data.map((card, i) => (
         <>
           <div className="mb-3 flex items-center gap-2">
             <card.Icon size={16} className={styles.accent} />
@@ -54,7 +54,7 @@ export function CardList({ title, data, variant = 'default' }: CardListProps) {
           </div>
           <p className={['text-3xl font-semibold', styles.value].join(' ')}>{card.value}</p>
           <p className={['mt-1 text-sm', styles.subtitle].join(' ')}>{card.subtitle}</p>
-          <Divider />
+          {i !== data.length - 1 && <Divider />}
         </>
       ))}
     </div>
