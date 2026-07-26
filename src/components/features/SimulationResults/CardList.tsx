@@ -35,9 +35,10 @@ export function CardList({ title, data, variant = 'default' }: CardListProps) {
 
   return (
     <div
-      className={['rounded-2xl p-6 shadow-[4px_4px_18px_0px_rgba(0,0,0,0.2)]', styles.card].join(
-        ' ',
-      )}
+      className={[
+        'h-full rounded-2xl p-6 shadow-[4px_4px_18px_0px_rgba(0,0,0,0.2)]',
+        styles.card,
+      ].join(' ')}
     >
       <p className="mb-6 text-lg font-semibold tracking-widest">{title}</p>
       {data.map((card, i) => (

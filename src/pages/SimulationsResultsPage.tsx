@@ -39,7 +39,7 @@ export function SimulationsResultsPage() {
           icon={PiggyBank}
           label="Economia mensal"
           value={`R$ ${monthlySavings.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
-          subtitle={'Economia mensal necessária'}
+          subtitle={'Valor mensal disponível'}
         />
       </div>
       <div className="grid gap-6 lg:grid-cols-3">
