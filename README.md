@@ -1,75 +1,92 @@
-# React + TypeScript + Vite
+# PlanejAI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PlanejAI é uma aplicação web desenvolvida durante o bootcamp Santander 2026 - AI & React, realizado pela DIO em parceria com o Santander. O projeto tem como objetivo ajudar o usuário a planejar metas financeiras de forma prática, utilizando inteligência artificial para gerar insights personalizados com base em renda, despesas, dívidas e objetivos.
 
-Currently, two official plugins are available:
+## Sobre o projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+A aplicação permite:
 
-## React Compiler
+- cadastrar uma simulação financeira com dados como renda mensal, despesas fixas, dívidas e meta desejada;
+- gerar um diagnóstico e sugestões personalizadas com a ajuda do Gemini;
+- visualizar o histórico das simulações realizadas;
+- acompanhar de forma intuitiva o progresso do planejamento.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Gemini API
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Pré-requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Antes de começar, certifique-se de ter instalado:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Node.js 20+
+- npm ou pnpm
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Instalação
 
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/planejai.git
+cd planejai
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
+
+3. Crie um arquivo de ambiente com a chave da API do Gemini:
+
+```bash
+cp .env.example .env.local
+```
+
+4. Edite o arquivo `.env.local` e adicione sua chave:
+
+```env
+VITE_GEMINI_API_KEY=sua_chave_aqui
+```
+
+5. Inicie o projeto em modo de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:5173`.
+
+## Variáveis de ambiente
+
+Este projeto utiliza a seguinte variável de ambiente:
+
+- `VITE_GEMINI_API_KEY`: chave da API do Google Gemini utilizada para gerar os insights das simulações.
+
+> Para obter a chave, acesse o Google AI Studio e crie uma chave de API para o Gemini.
+
+## Scripts disponíveis
+
+- `npm run dev` — inicia o servidor de desenvolvimento
+- `npm run build` — cria a build de produção
+- `npm run lint` — executa a análise estática do código
+- `npm run preview` — visualiza a build localmente
+
+## Estrutura do projeto
+
+A estrutura principal é organizada em:
+
+- `src/components` — componentes da interface
+- `src/pages` — páginas da aplicação
+- `src/services` — integração com a API do Gemini
+- `src/hooks` — lógicas reutilizáveis
+- `src/data` — dados e prompts utilizados pela simulação
+
+## Licença
+
+Este projeto é de uso educacional e foi desenvolvido como parte de um desafio de formação.
