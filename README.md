@@ -1,6 +1,6 @@
 # PlanejAI
 
-PlanejAI é uma aplicação web desenvolvida durante o bootcamp Santander 2026 - AI & React, realizado pela DIO em parceria com o Santander. O projeto tem como objetivo ajudar o usuário a planejar metas financeiras de forma prática, utilizando inteligência artificial para gerar insights personalizados com base em renda, despesas, dívidas e objetivos.
+PlanejAI é uma aplicação web desenvolvida durante o bootcamp Santander 2026 - AI & React, realizado pela DIO em parceria com o Santander. O projeto ajuda o usuário a planejar metas financeiras de forma prática, utilizando inteligência artificial para gerar insights personalizados a partir de renda, despesas, dívidas e objetivos.
 
 ## Sobre o projeto
 
@@ -11,6 +11,12 @@ A aplicação permite:
 - visualizar o histórico das simulações realizadas;
 - acompanhar de forma intuitiva o progresso do planejamento.
 
+## Arquitetura atual
+
+A integração com o Gemini foi atualizada para utilizar uma Serverless Function da Vercel em [api/gemini.ts](api/gemini.ts). O frontend chama o endpoint `/api/gemini`, e a função é responsável por se comunicar com a API do Gemini em nome da aplicação.
+
+Essa abordagem mantém a chave de API protegida no ambiente da Vercel.
+
 ## Tecnologias utilizadas
 
 - React
@@ -18,6 +24,7 @@ A aplicação permite:
 - Vite
 - React Router DOM
 - Tailwind CSS
+- Vercel Serverless Functions
 - Gemini API
 
 ## Pré-requisitos
@@ -32,7 +39,7 @@ Antes de começar, certifique-se de ter instalado:
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/planejai.git
+git clone https://github.com/camilafbc/react-planejai.git
 cd planejai
 ```
 
@@ -42,19 +49,7 @@ cd planejai
 npm install
 ```
 
-3. Crie um arquivo de ambiente com a chave da API do Gemini:
-
-```bash
-cp .env.example .env.local
-```
-
-4. Edite o arquivo `.env.local` e adicione sua chave:
-
-```env
-VITE_GEMINI_API_KEY=sua_chave_aqui
-```
-
-5. Inicie o projeto em modo de desenvolvimento:
+3. Inicie o projeto em modo de desenvolvimento:
 
 ```bash
 npm run dev
@@ -64,9 +59,21 @@ A aplicação estará disponível em `http://localhost:5173`.
 
 ## Variáveis de ambiente
 
-Este projeto utiliza a seguinte variável de ambiente:
+### Ambiente local
 
-- `VITE_GEMINI_API_KEY`: chave da API do Google Gemini utilizada para gerar os insights das simulações.
+Para rodar a aplicação localmente, você pode configurar as variáveis abaixo em um arquivo `.env.local`:
+
+```env
+GEMINI_API_KEY=sua_chave_aqui
+MODEL_NAME=gemini-flash-latest
+```
+
+### Ambiente Vercel
+
+Ao fazer o deploy na Vercel, defina as seguintes variáveis de ambiente no painel da plataforma:
+
+- `GEMINI_API_KEY`: chave da API do Google Gemini utilizada pela Serverless Function
+- `MODEL_NAME`: modelo utilizado, por exemplo `gemini-flash-latest`
 
 > Para obter a chave, acesse o Google AI Studio e crie uma chave de API para o Gemini.
 
@@ -83,9 +90,10 @@ A estrutura principal é organizada em:
 
 - `src/components` — componentes da interface
 - `src/pages` — páginas da aplicação
-- `src/services` — integração com a API do Gemini
+- `src/services` — integração com o frontend para a função de API
 - `src/hooks` — lógicas reutilizáveis
 - `src/data` — dados e prompts utilizados pela simulação
+- `api` — Serverless Function responsável pela comunicação com o Gemini
 
 ## Licença
 

@@ -24,7 +24,6 @@ interface ActionButtonProps {
 }
 
 export function FormStep({
-  id,
   icon: Icon,
   title,
   question,

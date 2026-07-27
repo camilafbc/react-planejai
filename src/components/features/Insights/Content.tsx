@@ -1,6 +1,6 @@
 import type { PropsWithChildren } from 'react'
 
-import type { InsightData } from '@/services/aiService'
+import type { InsightData } from '../../../../api/gemini'
 
 interface ContentProps {
   insight: InsightData

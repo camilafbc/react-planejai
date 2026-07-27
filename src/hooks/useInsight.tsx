@@ -3,7 +3,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { buildAIPrompt } from '@/data/aiPrompt'
 import type { SimulationRecord } from '@/data/simulation'
 import { useSimulationStorage } from '@/hooks/useSimulationStorage'
-import { getInsight, type InsightData } from '@/services/aiService'
+import { getInsight } from '@/services/aiService'
+
+import type { InsightData } from '../../api/gemini'
 
 export const useInsight = (id: string) => {
   const isRequestPending = useRef(false)
@@ -24,7 +26,6 @@ export const useInsight = (id: string) => {
   const fetchInsight = useCallback(
     async (simulationId: string) => {
       const simulation = getFormData(simulationId)
-
       if (!simulation) {
         setError('Simulação não encontrada.')
         return

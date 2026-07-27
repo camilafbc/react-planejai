@@ -1,7 +1,6 @@
 import { CalendarClock, CreditCard, Goal, Landmark, PiggyBank, Wallet } from 'lucide-react'
 
-import type { InsightData } from '@/services/aiService'
-
+import type { InsightData } from '../../api/gemini'
 import type { FormStepProps } from '../components/features/Simulation/FormStep'
 
 export const simulationFormSteps = [
