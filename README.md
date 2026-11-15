@@ -1,13 +1,10 @@
+
+
+# 💰 PlanejAI - Planejador Financeiro Inteligente com IA
+
+
 <div align="center">
-
-# 💰 PlanejAI
-
-**Planejador Financeiro Inteligente com IA**
-
-PlanejAI é uma aplicação web moderna que transforma metas financeiras em planos práticos e acionáveis. Utilizando a API do **Google Gemini** através de uma arquitetura segura com **Serverless Functions na Vercel**, a ferramenta analisa a renda, despesas e dívidas do usuário para fornecer diagnósticos detalhados, projeções e sugestões personalizadas de economia, renda extra e investimentos.
-
----
-
+  
 [![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
@@ -19,18 +16,13 @@ PlanejAI é uma aplicação web moderna que transforma metas financeiras em plan
 
 <br />
 
-<!-- ========================================== -->
-<!-- PREVIEW / CAPTURA DE TELA DA APLICAÇÃO      -->
-<!-- Substitua o link abaixo pela sua imagem     -->
-<!-- ========================================== -->
-<div align="center">
-  <img src="./src/assets/preview.png" alt="Demonstração do PlanejAI" width="100%" />
-  <p><em>Interface do PlanejAI: diagnóstico inteligente, histórico e simulações financeiras</em></p>
-</div>
 
+<img width="1794" height="889" alt="image" src="https://github.com/user-attachments/assets/587d804c-d689-4112-9e58-2cf3bf8a5b7f" />
+
+> PlanejAI é uma aplicação web moderna que transforma metas financeiras em planos práticos e acionáveis. Utilizando a API do **Google Gemini** através de uma arquitetura segura com **Serverless Functions na Vercel**, a ferramenta analisa a renda, despesas e dívidas do usuário para fornecer diagnósticos detalhados, projeções e sugestões personalizadas de economia, renda extra e investimentos.
 <br />
+👉 Acesso: https://react-planejai.vercel.app/
 
----
 
 ## 📌 Sobre o Projeto
 
@@ -186,8 +178,3 @@ planejai/
 └── vite.config.ts             # Configuração do Vite
 ```
 
----
-
-## 📄 Licença e Agradecimentos
-
-Este projeto foi desenvolvido para fins educacionais e portfólio durante o **Santander Bootcamp 2026 - AI & React** promovido pela [DIO](https://www.dio.me/) em parceria com o [Santander Open Academy](https://www.santanderopenacademy.com/).
